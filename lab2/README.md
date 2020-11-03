@@ -25,7 +25,7 @@ Returns JSON object with information about how many uppercase letters, lowercase
 "uppercaseLettersCount" : 3,
 "lowercaseLettersCount" : 3,
 "numbersCount" : 3,
-"specialCharacterCount" : 3
+"specialCharactersCount" : 3
 }
 </code>
 
