@@ -25,14 +25,14 @@ import java.util.List;
 @Controller
 public class CalendarController {
 
-    @GetMapping("/weeiaCalendar")
-    public ResponseEntity<String> getICSCalendar(@RequestParam int month) throws IOException {
+    @GetMapping(produces = "text/calendar", path = "/weeiaCalendar")
+    public ResponseEntity<Calendar> getICSCalendar(@RequestParam int month) throws IOException {
         if (!isCorrectMonth(month)) {
             return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
         }
         int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
-        getWEEIACalendarForGivenMonth(currentYear, month);
-        return new ResponseEntity<>("OK", HttpStatus.OK);
+        Calendar weeiaCalendar = getWEEIACalendarForGivenMonth(currentYear, month);
+        return new ResponseEntity<>(weeiaCalendar, HttpStatus.OK);
     }
 
     private boolean isCorrectMonth(int month) {
