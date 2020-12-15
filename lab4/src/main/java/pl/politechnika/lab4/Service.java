@@ -9,7 +9,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Service {
     private String name;
-    private String description;
     private String address;
     private String phone;
     private String email;
