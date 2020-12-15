@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -36,5 +37,18 @@ public class VCardController {
         } catch (IOException e) {
             return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
         }
+    }
+
+    @GetMapping("/vCard")
+    public ResponseEntity<String> getVCard(@RequestParam Service service) {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "text/calendar; charset=utf-8");
+        headers.add("Content-Disposition", "inline;filename=" + service.getName() + ".vcf");
+
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .body(service.generateVCard());
     }
 }
