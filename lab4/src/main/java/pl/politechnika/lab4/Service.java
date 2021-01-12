@@ -13,6 +13,13 @@ public class Service {
     private String phone;
     private String email;
 
+    public Service(String name, String address, String phone, String email) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
     public String generateVCard() {
         return "BEGIN:VCARD\n" +
                 "VERSION:4.0\n" +

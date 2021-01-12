@@ -42,8 +42,12 @@ public class VCardController {
     }
 
     @GetMapping("/vCard")
-    public ResponseEntity<String> getVCard(@RequestParam Service service) {
+    public ResponseEntity<String> getVCard(@RequestParam String name,
+                                           @RequestParam String address,
+                                           @RequestParam String phone,
+                                           @RequestParam String email) {
 
+        Service service = new Service(name, address, phone, email);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "text/calendar; charset=utf-8");
         headers.add("Content-Disposition", "inline;filename=" + service.getName() + ".vcf");
