@@ -88,6 +88,17 @@
             tr.appendChild(td5);
         }
     }
+    async function getVCard(i) {
+        console.log("getVCard " + i);
+        console.log(data[i]);
+        const res = await axios.get('http://localhost:8080/vCard',
+            { params: {
+                "name": data[i].name,
+                    "address": data[i].address,
+                    "phone": data[i].phone,
+                    "email":data[i].email } });
+        console.log(res)
+    }
 
 </script>
 
