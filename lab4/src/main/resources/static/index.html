@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>VCard generator</title>
+</head>
+<body>
+
+<div class="container-lg">
+    <section>
+        <form name="form" action="" method="GET">
+            <div class="row p-2">
+                <label for="profession">Profesja</label>
+                <div class="col-8">
+                    <div class="form-group">
+                        <input name="input" type="text" class="form-control" id="profession">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" type="button" onClick="searchCompanies(this.form)">Szukaj</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Nazwa</th>
+                <th>Adres</th>
+                <th>Numer telefonu</th>
+                <th>Adres email</th>
+                <th>Pobierz VCard</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+
+</body>
+</html>
