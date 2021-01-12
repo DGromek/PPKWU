@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -41,7 +42,7 @@ public class VCardController {
         }
     }
 
-    @GetMapping("/vCard")
+    @GetMapping(value = "/vCard", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getVCard(@RequestParam String name,
                                            @RequestParam String address,
                                            @RequestParam String phone,
