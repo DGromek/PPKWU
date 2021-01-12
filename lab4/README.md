@@ -5,7 +5,7 @@ Returns list of companies with name provided in parameter <a>https://panoramafir
 <code>GET localhost:8080/services?searchParam=hydraulik</code>
 
 <h2>Returns</h2>
-```
+<code>
     {
         "name": "Fhu Nypel Usługi Hydrauliczne Łukasz Szydliński",
         "address": "ul. Cieszkowskiego 4/27, 41-303 Dąbrowa Górnicza",
@@ -156,16 +156,16 @@ Returns list of companies with name provided in parameter <a>https://panoramafir
         "phone": "730 530 893",
         "email": "wasik.stanislaw91@wp.pl"
     }
-```
+</code>
 
 <h1>GET /vCard</h1>
 Returns VCard for name, address, email and phone number provided in parameters
 
 <h2>Example request</h2>
-```GET http://localhost:8080/vCard?name=Fhu+Nypel+Us%C5%82ugi+Hydrauliczne+%C5%81ukasz+Szydli%C5%84ski&address=ul.+Cieszkowskiego+4%2F27,+41-303+D%C4%85browa+G%C3%B3rnicza&phone=698+095+573&email=brak'```
+<code>GET http://localhost:8080/vCard?name=Fhu+Nypel+Us%C5%82ugi+Hydrauliczne+%C5%81ukasz+Szydli%C5%84ski&address=ul.+Cieszkowskiego+4%2F27,+41-303+D%C4%85browa+G%C3%B3rnicza&phone=698+095+573&email=brak'</code>
 
 <h2>Returns</h2>
-```
+<code>
 "BEGIN:VCARD
 VERSION:4.0
 N:Fhu Nypel Usługi Hydrauliczne Łukasz Szydliński;Forrest;;;
@@ -173,5 +173,5 @@ TEL;TYPE=work,voice;VALUE=uri:tel:698 095 573
 EMAIL:brak
 ADR;TYPE=WORK,PREF:ul. Cieszkowskiego 4/27, 41-303 Dąbrowa Górnicza
 END:VCARD"
-```
+</code>
 
